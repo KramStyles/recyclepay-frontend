@@ -1,5 +1,10 @@
 import React from 'react';
-import { Button, Text, DashHeader } from 'components';
+import { Button, Text, DashHeader, RightSidebar, Radio, InputDropdown } from 'components';
+
+const ShowSidebar = () => {
+  const sidebar = document.querySelector('.RightSidebar-container');
+  sidebar.classList.remove('RightSidebar-inactive');
+};
 
 export const SignUpPage = () => (
   <div
@@ -40,5 +45,21 @@ export const SignUpPage = () => (
       </div>
     </div>
     <DashHeader />
+    <br />
+    <Button stretch btnType="primary" text="Open Sidebar" onClick={ShowSidebar} />
+    <RightSidebar title="Pickup Information" btnText="Confirm Pickup">
+      <Text text="Material Type" />
+      <form action="" className="RightSidebar-form">
+        <Radio text="Plastic" name="options" />
+        <Radio text="Bottles" name="options" />
+        <Radio text="Metal (Iron & Aluminium Scrap)" name="options" />
+        <Radio text="Paper & Cardboard" name="options" />
+        <Radio text="Tires" name="options" />
+        <Radio text="Batteries & Electronics" name="options" />
+      </form>
+      <InputDropdown title="Estimated Weight" dropdown />
+      <InputDropdown title="Pickup Address" />
+      <InputDropdown title="Set Pickup Date" date />
+    </RightSidebar>
   </div>
 );
