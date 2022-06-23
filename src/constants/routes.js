@@ -7,9 +7,10 @@ export const ROUTES = {
   },
   signIn: {
     path: 'login',
+    fullpath: '/login',
   },
   resetPassword: {
-    path: '/password',
+    path: 'reset-password',
   },
   forgotPassword: {
     path: 'forgot-password',
@@ -19,5 +20,11 @@ export const ROUTES = {
   },
   overview: {
     path: 'overview',
+  },
+  verify: {
+    path: 'verify',
+  },
+  verifyEncoded: {
+    path: ':encodedEmail',
   },
 };
